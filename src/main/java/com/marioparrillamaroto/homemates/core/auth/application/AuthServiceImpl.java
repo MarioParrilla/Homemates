@@ -17,10 +17,10 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
-    private final Mapper<AuthUserEntity, AuthUserDTO> mapper;
     @Autowired
     @Qualifier("JPA-Auth-User-Adapter")
     private final AuthUserRepositoryPort repository;
+    private final Mapper<AuthUserEntity, AuthUserDTO> mapper;
 
     @Override
     public AuthUserDTO register(AuthUserDTO dto) throws InvalidRegisterException {
